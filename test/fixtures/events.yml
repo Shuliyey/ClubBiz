@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  when: 2014-05-11 21:42:43
+  maxTickets: 1
+  ticketPrice: 1
+  memberDiscount: 1
+
+two:
+  name: MyString
+  description: MyString
+  when: 2014-05-11 21:42:43
+  maxTickets: 1
+  ticketPrice: 1
+  memberDiscount: 1
