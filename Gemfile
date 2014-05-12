@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+# Use devise for user logins, authentication, validation and confirmation.
 gem 'devise'
 
+# Use mail (and action mailer) for email confirmation
 gem 'mail'

@@ -12,6 +12,7 @@ html {
 }
 body {
   margin: 0;
+  background: #e6e6e6 !important;
 }
 article,
 aside,
@@ -4021,11 +4022,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: #3399ff; /*#222;*/
+  border-color: #3399ff; /*#080808;*/
 }
 .navbar-inverse .navbar-brand {
-  color: #999;
+  color: #000000; /*#999;*/
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4033,10 +4034,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #999;
+  color: #000000; /*#999;*/
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #999;
+  color: #000000; /*#999;*/
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
