@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :clubs
   devise_for :students
   resources :events
 
