@@ -3333,7 +3333,7 @@ input[type="button"].btn-block {
 .input-group .form-control {
   position: relative;
   z-index: 2;
-  float: left;
+  float: right;
   width: 100%;
   margin-bottom: 0;
 }
@@ -3886,7 +3886,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     vertical-align: middle;
   }
   .navbar-form .input-group > .form-control {
-    width: 100%;
+    width: 250px;
   }
   .navbar-form .control-label {
     margin-bottom: 0;
