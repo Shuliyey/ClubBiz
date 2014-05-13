@@ -20,6 +20,7 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	      <%= link_to "ClubBiz", events_path, class: 'navbar-brand' %>
+	      <% if club_signed_in? %> <p class="navbar-text">Clubs & Socities View</p> <% end %>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,6 +29,11 @@
 	        <% if student_signed_in? %>
 				<li><%= link_to current_student.full_name, edit_student_registration_path, class: 'navbar-link' %></li>
 				<li><%= link_to "Log Out", destroy_student_session_path, class: 'navbar-link', method: :delete %></li>
+
+		    <% elsif club_signed_in? %>
+				<li><%= link_to current_club.full_name, edit_club_registration_path, class: 'navbar-link' %></li>
+				<li><%= link_to "Log Out", destroy_club_session_path, class: 'navbar-link', method: :delete %></li>
+
 			<% else %>
 				<li><%= link_to "Register", new_student_registration_path, class: 'navbar-link' %></li>
 				<li><%= link_to "Log in", new_student_session_path, class: 'navbar-link' %></li>

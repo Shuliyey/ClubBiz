@@ -6,8 +6,10 @@
   <div><%= f.label :description %><br />
     <%= f.text_field :description %></div>
 
+  <% if (1==2) #TODO admin_signed_in? %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
+  <% end %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
