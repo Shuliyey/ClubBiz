@@ -13,6 +13,12 @@
 /* White      #FFFFFF */
 /* Black      #000000 */
 
+/*  GN Card Style                   */
+/*  background: white;              */
+/*  /* border-radius: .4rem; */     */
+/*  border: 1px solid #AAA;         */
+/*  border-bottom: 3px solid #BBB;  */
+
 
 html {
   font-family: sans-serif;
@@ -748,6 +754,17 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+.card {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  /* border-radius: .4rem; */    
+  border: 1px solid #AAA;         
+  border-bottom: 3px solid #BBB;  
 }
 @media (min-width: 768px) {
   .container {
