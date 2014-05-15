@@ -25,6 +25,8 @@
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+	      <!-- User account log in register etc -->	
 	      <ul class="nav navbar-nav navbar-right">
 	        <% if student_signed_in? %>
 				<li><%= link_to current_student.full_name, edit_student_registration_path, class: 'navbar-link' %></li>
@@ -39,7 +41,9 @@
 				<li><%= link_to "Log in", new_student_session_path, class: 'navbar-link' %></li>
 			<% end %>
 	      </ul>
+	      <!-- User account log in register etc -->	
 
+	      <!-- Search Bar -->
 		  <form class="navbar-form -navbar-right" role="search">
 	          <div class="input-group">
 	              <input type="search" class="form-control" placeholder="Search for clubs or events..." name="q">  
@@ -48,7 +52,7 @@
 	              </div>  
 	          </div>
 	      </form>
-
+	      <!-- Search Bar -->
 
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->

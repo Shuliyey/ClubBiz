@@ -1,5 +1,23 @@
-<h1>Listing events</h1>
+<div align="center"> <h1>Listing events</h1> <br /> </div>
 
+<div class="row">
+<% @events.each do |event| %>
+    <div class="col-md-3">
+      <%= link_to event do %>
+      <div class="card-small" align="center"> 
+        <p> 
+          <%= event.name %> <br />
+          <%= event.when %> <br />
+          Event Location <br />
+        </p>
+      </div>
+      <% end %>
+    </div>
+<% end %>
+</div>
+
+
+<!--
 <table>
   <thead>
     <tr>
@@ -32,4 +50,10 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+-->
+<br>
+<%= link_to new_event_path do %>
+<div class="card-small" align="center">
+<h4>New Event </h4>
+</div>
+<% end %>

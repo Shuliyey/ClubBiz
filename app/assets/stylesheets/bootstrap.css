@@ -310,7 +310,7 @@ a {
 a:hover,
 a:focus {
   color: #2a6496;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -336,7 +336,7 @@ img {
   border-radius: 6px;
 }
 .img-thumbnail {
-  display: inline-block;
+  display: inline-blo
   max-width: 100%;
   height: auto;
   padding: 4px;
@@ -758,6 +758,7 @@ pre code {
 .card {
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 15px;
   padding-bottom: 15px;
   margin-right: auto;
   margin-left: auto;
@@ -766,6 +767,27 @@ pre code {
   border: 1px solid #AAA;         
   border-bottom: 3px solid #BBB;  
 }
+.card-small {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  /* border-radius: .4rem; */    
+  border: 1px solid #AAA;         
+  border-bottom: 3px solid #BBB;  
+}
+.card-small:hover,
+.card-small:focus {
+  color: black;
+  background-color: #dedede;
+  text-decoration: none;
+  border: 1px solid #BBB;
+  border-bottom: 3px solid #BBB;      
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -796,6 +818,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  padding-bottom: 15px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -1722,7 +1745,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
+  color: #DDDDDD;
   background-color: #003366;
   background-image: none;
   border: 1px solid #003366;
