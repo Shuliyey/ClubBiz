@@ -4,7 +4,11 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<div class="btn-group">
+  <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"), 
+          @event, 
+          class: "btn btn-inverse",
+          method: :get %>
+</div>
 
 </div>

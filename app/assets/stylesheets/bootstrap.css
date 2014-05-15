@@ -2088,6 +2088,20 @@ fieldset[disabled] .btn {
           box-shadow: none;
   opacity: .65;
 }
+.btn-inverse {
+  color: #333;
+  background-color: #dddddd;
+  border-color: #bbb;
+}
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  color: #333;
+  background-color: #ccc;
+  border-color: #aaa;
+}
 .btn-default {
   color: #333;
   background-color: #003366;
