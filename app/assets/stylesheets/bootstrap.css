@@ -4430,10 +4430,16 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  /* border-radius: .4rem; */    
+  border: 1px solid #AAA;         
+  border-bottom: 3px solid #BBB;  
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4443,6 +4449,7 @@ a.list-group-item.active > .badge,
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+  line-height: 36px;
 }
 .container .jumbotron {
   border-radius: 6px;

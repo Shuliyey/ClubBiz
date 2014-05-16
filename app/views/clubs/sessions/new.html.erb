@@ -1,3 +1,11 @@
+<% if student_signed_in? %>
+
+<div class="card">
+You must <%= link_to "Log Out", destroy_student_session_path, class: 'navbar-link', method: :delete %> of student account <%= current_student.full_name %> before you can log in as a club or society.
+</div>
+
+<% else %>
+
 <div class="card">
 
 <h2>Club Log In</h2>
@@ -19,3 +27,5 @@
 <%= render "clubs/shared/links" %>
 
 </div>
+
+<% end %>

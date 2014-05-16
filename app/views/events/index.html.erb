@@ -1,3 +1,5 @@
+<% if student_signed_in? or club_signed_in? %>
+
 <div align="center"> <h1>Listing events</h1> <br /> </div>
 
 <div class="row">
@@ -16,7 +18,18 @@
 <% end %>
 </div>
 
+<% else %>
 
+<div class="jumbotron">
+  <h1>Welcome to ClubBiz!</h1>
+  <p>ClubBiz is the best way to discover events around Uni. From BBQs to parties, guest lectures to rallies, or any other kind of Club event, this is the place to hear about it.</p>
+  <p>
+  <%= link_to "Log In", new_student_session_path, class: 'btn btn-inverse btn-lg', role: "button" %>
+  <%= link_to "Sign Up Today!", new_student_registration_path, class: 'btn btn-inverse btn-lg', role: "button" %>
+  </p>
+</div>
+
+<% end %> 
 <!--
 <table>
   <thead>
@@ -52,8 +65,13 @@
 
 -->
 <br>
+
+<% if club_signed_in? %>
+
 <%= link_to new_event_path do %>
 <div class="card-small" align="center">
 <h4>New Event </h4>
 </div>
+<% end %>
+
 <% end %>

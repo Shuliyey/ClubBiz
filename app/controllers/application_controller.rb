@@ -11,5 +11,10 @@ class ApplicationController < ActionController::Base
 			devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :name, :description]
 		end
 
+	#Make it so only clubs can create, edit, update or destroy events
+	before_action :authenticate_club!, only: [:edit,:new,:update,:destroy]
+
+
 
 end
+
