@@ -15,7 +15,7 @@
 
 /*  GN Card Style                   */
 /*  background: white;              */
-/*  /* border-radius: .4rem; */     */
+/*  /* border-radius: .4rem;        */
 /*  border: 1px solid #AAA;         */
 /*  border-bottom: 3px solid #BBB;  */
 
@@ -770,10 +770,12 @@ pre code {
   border: 1px solid #AAA;         
   border-bottom: 3px solid #BBB;  
 }
-.card-small {
+.card > p {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+}
+.card-small {
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 15px;
@@ -784,6 +786,11 @@ pre code {
   /* border-radius: .4rem; */    
   border: 1px solid #AAA;         
   border-bottom: 3px solid #BBB;  
+}
+.card-small > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-small:hover,
 .card-small:focus {
