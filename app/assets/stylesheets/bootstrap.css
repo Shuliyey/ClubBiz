@@ -756,6 +756,9 @@ pre code {
   margin-left: auto;
 }
 .card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 15px;
@@ -768,6 +771,9 @@ pre code {
   border-bottom: 3px solid #BBB;  
 }
 .card-small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 15px;
