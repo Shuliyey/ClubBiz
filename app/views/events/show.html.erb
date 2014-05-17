@@ -3,7 +3,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Club:</strong>
+  <%= Club.find(@event.club_id).full_name %>
+</p>
+
+<p>
+  <strong>Event:</strong>
   <%= @event.name %>
 </p>
 

@@ -9,6 +9,9 @@
       <div class="card-small" align="center"> 
         <p> 
           <%= event.name %> <br />
+
+
+          <%= Club.find(event.club_id).full_name %> <br />
           <%= event.when %> <br />
           Event Location <br />
         </p>
