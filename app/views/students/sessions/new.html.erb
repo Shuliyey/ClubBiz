@@ -1,7 +1,7 @@
 <% if club_signed_in? %>
 
 <div class="card">
-You must <%= link_to "Log Out", destroy_club_session_path, class: 'navbar-link', method: :delete %> of club account <%= current_student.full_name %> before you can log in as a student.
+You must <%= link_to "Log Out", destroy_club_session_path, class: 'navbar-link', method: :delete %> of club account <%= current_club.full_name %> before you can log in as a student.
 </div>
 
 <% else %>

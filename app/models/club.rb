@@ -9,3 +9,4 @@ class Club < ActiveRecord::Base
   end
 
 end
+# This is a comment
