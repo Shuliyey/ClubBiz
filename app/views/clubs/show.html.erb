@@ -15,11 +15,15 @@
 <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"),
     :back,
     class: "btn btn-inverse"%>
-  <% if student_signed_in? %>        
-    <!-- Like Button Goes here -->
-  <% end %>
-  <% if (@club.id == current_club.id) %>
+  <% if club_signed_in? and (@club_id == current_club.id) %>
   <%= link_to raw("<i class=\"glyphicon glyphicon-pencil\"> Edit</i>"), edit_club_registration_path, class: "btn btn-inverse" %>
+  <% end %>
+
+	<% if student_signed_in? %>
+	<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Like (THIS BUTTON DOESNT DO ANYTHING YET)</i>"), 
+	  profile_path(@club.id), 
+	  class: "btn btn-inverse"%>
+
   <% end %>
 </div>
 
