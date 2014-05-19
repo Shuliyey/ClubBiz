@@ -775,6 +775,15 @@ pre code {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card > p > a{
+  color: #000000;
+}
+.card > p > a:hover,
+.card > p > a:focus{
+  background: #dddddd
+
+}
+
 .card-small {
   padding-right: 15px;
   padding-left: 15px;

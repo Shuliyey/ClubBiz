@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'clubs/show'
+
   devise_for :clubs
   devise_for :students
   resources :events
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'events#index'
+
+  get 'clubs/:id' => 'clubs#show', as: :profile
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

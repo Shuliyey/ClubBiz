@@ -3,8 +3,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Club:</strong>
-  <%= Club.find(@event.club_id).full_name %>
+  <%= link_to profile_path(@event.club_id) do %>
+  
+    <strong>Club:</strong>
+    <%= Club.find(@event.club_id).full_name %>
+
+  <% end %>
 </p>
 
 <p>
@@ -44,7 +48,7 @@
   <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"), 
       events_path, 
       class: "btn btn-inverse"%>
-  <% if club_signed_in? %>        
+  <% if (@event.club_id == current_club.id) %>        
   <%= link_to raw("<i class=\"glyphicon glyphicon-pencil\"> Edit</i>"), 
           edit_event_path(@event), 
           class: "btn btn-inverse",
