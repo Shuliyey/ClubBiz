@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'students/like_club'
+
   get 'clubs/show'
 
   devise_for :clubs
