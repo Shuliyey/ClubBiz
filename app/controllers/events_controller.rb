@@ -4,11 +4,15 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    date_from = params[:date_from].to_datetime if !params[:date_from].nil?
+    date_to = params[:date_to].to_datetime if !params[:date_to].nil?
+    date_from = Time.zone.now.beginning_of_day if params[:date_from].nil?
+    date_to = 7.day.from_now.beginning_of_day if params[:date_to].nil?
+    @events = Event.where(:when => (date_from..date_to))
   end
 
   # GET /events/1
-  # GET /events/1.json
+  # GET /events/1.json  
   def show
   end
 
