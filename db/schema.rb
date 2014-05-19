@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519060804) do
+ActiveRecord::Schema.define(version: 20140519043120) do
 
   create_table "clubs", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(version: 20140519060804) do
   add_index "clubs", ["email"], name: "index_clubs_on_email", unique: true
   add_index "clubs", ["reset_password_token"], name: "index_clubs_on_reset_password_token", unique: true
 
+  create_table "clubs_students", id: false, force: true do |t|
+    t.integer "student_id", null: false
+    t.integer "club_id",    null: false
+  end
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -51,12 +56,7 @@ ActiveRecord::Schema.define(version: 20140519060804) do
 
   add_index "events", ["club_id"], name: "index_events_on_club_id"
 
-  create_table "studentclub", id: false, force: true do |t|
-    t.integer "student_id", null: false
-    t.integer "club_id",    null: false
-  end
-
-  create_table "studentevent", id: false, force: true do |t|
+  create_table "events_students", id: false, force: true do |t|
     t.integer "student_id", null: false
     t.integer "event_id",   null: false
   end

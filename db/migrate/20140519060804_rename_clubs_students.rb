@@ -5,7 +5,7 @@ class RenameClubsStudents < ActiveRecord::Migration
   end
 
  def self.down
-    rename_table :studentclub, :Clubs_students 
+    rename_table :studentclub, :clubs_students 
   	rename_table :studentevent, :events_students
  end
 end
