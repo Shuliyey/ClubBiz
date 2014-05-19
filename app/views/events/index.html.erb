@@ -1,6 +1,10 @@
 <% if student_signed_in? or club_signed_in? %>
 
-<div align="center"> <h1>Listing events</h1> <br /> </div>
+<div align="center"> 
+	<h1>Listing events</h1>    
+	<a href='events?date_from=2014-01-01&date_to=2014-12-31'>this year</a> 
+	<br /> 
+</div>
 
 <div class="row">
 <% @events.each do |event| %>
