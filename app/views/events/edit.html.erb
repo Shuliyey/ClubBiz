@@ -1,3 +1,5 @@
+<% if (@event.club_id == current_club.id) %>
+
 <div class="card">
 
 <h1>Editing event</h1>
@@ -5,7 +7,25 @@
 <%= render 'form' %>
 
 <div class="btn-group">
-  <a class="btn btn-inverse" onClick="history.go(-1);return true;"><i class="glyphicon glyphicon-arrow-left" > Back</i></a>
+  <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"), 
+   		@event, 
+	    class: "btn btn-inverse"%>
 </div>
 
 </div>
+
+<% else %>
+
+
+<div class="card">
+<h3>You do not have permission to do that.</h3>
+
+<div class="btn-group">
+  <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"), 
+   		@event, 
+	    class: "btn btn-inverse"%>
+</div>
+
+</div>
+
+<% end %>

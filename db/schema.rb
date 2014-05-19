@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517105512) do
+ActiveRecord::Schema.define(version: 20140519043120) do
+
+  create_table "Clubs_students", id: false, force: true do |t|
+    t.integer "student_id", null: false
+    t.integer "club_id",    null: false
+  end
 
   create_table "clubs", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,6 +55,11 @@ ActiveRecord::Schema.define(version: 20140517105512) do
   end
 
   add_index "events", ["club_id"], name: "index_events_on_club_id"
+
+  create_table "events_students", id: false, force: true do |t|
+    t.integer "student_id", null: false
+    t.integer "event_id",   null: false
+  end
 
   create_table "students", force: true do |t|
     t.string   "email",                  default: "", null: false

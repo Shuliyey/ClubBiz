@@ -8,5 +8,9 @@ class Club < ActiveRecord::Base
 	"#{name}"
   end
 
+  has_many :events
+  
+  has_and_belongs_to_many :students
+
 end
 # This is a comment

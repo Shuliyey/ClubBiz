@@ -11,4 +11,7 @@ class Student < ActiveRecord::Base
 	"#{first_name} #{last_name}"
   end
 
+  has_and_belongs_to_many :events
+  has_and_belongs_to_many :clubs
+
 end

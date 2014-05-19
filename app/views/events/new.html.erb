@@ -5,7 +5,9 @@
 <%= render 'form' %>
 
 <div class="btn-group">
-  <a class="btn btn-inverse" onClick="history.go(-1);return true;"><i class="glyphicon glyphicon-arrow-left" > Back</i></a>
+  <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"), 
+   		events_path, 
+	    class: "btn btn-inverse"%>
 </div>
 
 </div>
