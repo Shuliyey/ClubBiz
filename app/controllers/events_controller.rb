@@ -8,6 +8,15 @@ class EventsController < ApplicationController
     date_to = params[:date_to].to_datetime if !params[:date_to].nil?
     date_from = Time.zone.now.beginning_of_day if params[:date_from].nil?
     date_to = 7.day.from_now.beginning_of_day if params[:date_to].nil?
+    date_range_hash = { 
+      "day" => 1.day.from_now.beginning_of_day,
+      "week" => 7.day.from_now.beginning_of_day,
+      "month" => 1.month.from_now.beginning_of_day,
+      "year" => 1.year.from_now.beginning_of_day
+    }
+    if (params.has_key?(:date_range))
+      date_to = date_range_hash[params[:date_range]]
+    end
     @events = Event.where(:when => (date_from..date_to))
   end
 

@@ -1,9 +1,14 @@
 <% if student_signed_in? or club_signed_in? %>
 
 <div align="center"> 
-	<h1>Listing events</h1>    
-	<a href='events?date_from=2014-01-01&date_to=2014-12-31'>this year</a> 
+	<div><h1>Listing events</h1></div>
+	<div>
+	<a href='events?date_range=day'>One Day</a>
+	<a href='events?date_range=week'>One Week</a> 
+	<a href='events?date_range=month'>One Month</a>
+	<a href='events?date_range=year'>One Year</a>
 	<br /> 
+	</div>
 </div>
 
 <div class="row">
