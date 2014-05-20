@@ -7,12 +7,23 @@ class Student < ActiveRecord::Base
   validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@student\.unimelb\.edu\.au\z/,
                   message: "must be a '@student.unimelb.edu.au' address" }
 
-  def full_name
-	"#{first_name} #{last_name}"
-  end
+	has_and_belongs_to_many :events
+  	has_and_belongs_to_many :clubs
 
-  has_and_belongs_to_many :events
-  has_and_belongs_to_many :clubs
+  	def full_name
+		"#{first_name} #{last_name}"
+  	end
 
+	def return_likes_club(student_id, club_id)
+	  	@student = Student.find(student_id)
+	  	@club = Club.find(club_id)
+	  	@student.clubs.where(:id => @club.id).exists?
+  	end
+
+  	def return_likes_event(student_id, event_id)
+	  	@student = Student.find(student_id)
+	  	@event = Event.find(event_id)
+	  	@student.events.where(:id => @event.id).exists?
+  	end
 
 end

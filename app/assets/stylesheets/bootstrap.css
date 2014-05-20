@@ -2124,6 +2124,19 @@ fieldset[disabled] .btn {
   background-color: #ccc;
   border-color: #aaa;
 }
+.btn-inverse-toggled {
+  color: #333;
+  background-color: #ccc;
+  border-color: #aaa;
+}
+.btn-inverse-toggled:hover,
+.btn-inverse-toggled:focus,
+.btn-inverse-toggled:active,
+.btn-inverse-toggled.active {
+  color: #333;
+  background-color: #BBBBBB;
+  border-color: #BBBBBB; 
+}
 .btn-default {
   color: #333;
   background-color: #003366;

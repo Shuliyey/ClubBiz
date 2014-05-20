@@ -20,10 +20,16 @@
   <% end %>
 
 	<% if student_signed_in? %>
-	<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Like (THIS BUTTON DOESNT DO ANYTHING YET)</i>"), 
-	  profile_path(@club.id), 
-	  class: "btn btn-inverse"%>
+		<% if current_student.return_likes_club(current_student.id, @club.id) %>
+			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Like </i>"), 
+	  			profile_path(@club.id), 
+	  			class: "btn btn-inverse"%>
+	  	<% else %>
+			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Liked </i>"), 
+	  			profile_path(@club.id), 
+	  			class: "btn btn-inverse-toggled"%>
 
+	  	<% end %>
   <% end %>
 </div>
 
