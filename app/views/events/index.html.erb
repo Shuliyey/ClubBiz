@@ -1,15 +1,27 @@
 <% if student_signed_in? or club_signed_in? %>
 
 <div align="center"> 
-	<div><h1>Listing events</h1></div>
-	<div>
-	<a href='events?date_range=day'>One Day</a>
-	<a href='events?date_range=week'>One Week</a> 
-	<a href='events?date_range=month'>One Month</a>
-	<a href='events?date_range=year'>One Year</a>
-	<br /> 
-	</div>
+	<h1>Listing events</h1>
 </div>
+
+<div class="row" align="center">
+  <div class="btn-group">
+    <a href='events?date_range=day' class="btn btn-inverse">Today</a>
+    <a href='events?date_range=week' class="btn btn-inverse">This Week</a> 
+    <a href='events?date_range=month' class="btn btn-inverse">This Month</a>
+    <a href='events?date_range=year' class="btn btn-inverse">This Year</a>
+  </div>
+  <p />
+</div>
+
+<!--
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div>
+-->
 
 <div class="row">
 <% @events.each do |event| %>
@@ -40,40 +52,7 @@
 </div>
 
 <% end %> 
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>When</th>
-      <th>Maxtickets</th>
-      <th>Ticketprice</th>
-      <th>Memberdiscount</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%= event.when %></td>
-        <td><%= event.maxTickets %></td>
-        <td><%= event.ticketPrice %></td>
-        <td><%= event.memberDiscount %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
--->
 <br>
 
 <% if club_signed_in? %>
