@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'students/like_club'
 
   get 'clubs/show'
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :clubs
   devise_for :students
   resources :events
+  resources :clubs_students, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
