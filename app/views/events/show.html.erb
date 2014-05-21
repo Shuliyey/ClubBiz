@@ -58,7 +58,14 @@
           method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } %>        
   <% end %>
   <% if student_signed_in? %>
+    <% if !current_student.return_likes_event(current_student.id, @event.id) %>
+      <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Like </i>"), events_students_path(:event_id => @event.id, :student_id => current_student.id), :method => :post, :class => "btn btn-inverse"%>
+      <% else %>
+        <% like = current_student.events.where(:id => @event.id) %>
+      <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Liked </i>"), 
+          events_student_path(:event_id => @event.id, :student_id => current_student.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
 
+      <% end %>
   <% end %>
 </div>
 

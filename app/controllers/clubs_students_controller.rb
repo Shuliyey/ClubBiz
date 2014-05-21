@@ -1,18 +1,5 @@
 class ClubsStudentsController < ApplicationController
 
-	# Events
-  	def like_event 
-	  	@student = Student.find(session[:student_id])
-	  	@event = Event.find(params[:event_id])
-	  	@student.events << @event
-  	end
-
-	def unlike_event
-	  	@student = Student.find(session[:student_id])
-	  	@event = Event.find(params[:event_id])
-	  	@student.events.delete(@event)
-  	end
-
   	# Clubs
   	def create #like Club
 	  	@student = Student.find(params[:student_id])
