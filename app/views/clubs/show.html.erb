@@ -9,6 +9,11 @@
   <%= @club.description %>
 </p>
 
+<p>
+  <strong>Likes:</strong>
+  <%= @club.count_likes(@club.id) %>
+</p>
+
 <br />
 
 <div class="btn-group">

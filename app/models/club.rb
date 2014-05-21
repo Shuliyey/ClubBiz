@@ -4,13 +4,18 @@ class Club < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  def full_name
-	"#{name}"
-  end
-
   has_many :events
-  
+
   has_and_belongs_to_many :students
+
+	def full_name
+		"#{name}"
+	end
+
+	def count_likes(club_id)
+		@club = Club.find(club_id)
+		@club.students.count
+	end
 
 end
 # This is a comment

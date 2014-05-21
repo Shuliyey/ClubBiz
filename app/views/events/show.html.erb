@@ -27,6 +27,11 @@
 </p>
 
 <p>
+  <strong>Likes:</strong>
+  <%= @event.count_likes(@event.id) %>
+</p>
+
+<p>
   <strong>Maxtickets:</strong>
   <%= @event.maxTickets %>
 </p>
