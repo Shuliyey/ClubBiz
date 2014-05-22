@@ -12,30 +12,31 @@
     <a href='events?date_range=month' class="btn btn-inverse">This Month</a>
     <a href='events?date_range=year' class="btn btn-inverse">This Year</a>
   </div>
-  <p />
+  <p> </p>
 </div>
 
-<div style="display=inline"; clear:both; align="center">
-  <form id="event_dates" post='events'>
-    From <input name="date_from" value="<%=@date_from%>" id="date_from"></input>
-    To <input name="date_to" value="<%=@date_to%>" id="date_to"></input>
-    <button onclick="document.getElementById("event_dates").submit()">Search</button>
+<div style="display=inline" clear="both" align="center">
+  <form id="event_dates" post='events'> 
+    From <input name="date_from" value="<%=@date_from%>" id="date_from" />
+    To <input name="date_to" value="<%=@date_to%>" id="date_to" />
+    <button onclick='document.getElementById("event_dates").submit()'>Search</button>
   </form>
+</div>
+
   <script>
-  	function addZeros(num_string, len) {
+      function addZeros(num_string, len) {
   		console.log(num_string)
   		for (var i = 0; i < len - num_string.length(); i++) {
   			num_string = "0" + num_string;
   		}
   		return num_string;
-  	}
+  	  }
   	
   	$(document).ready(function() {
   		$("#date_to").datepicker({dateFormat: "yy-mm-dd 00:00:00"});
   		$("#date_from").datepicker({dateFormat: "yy-mm-dd 00:00:00"});
   	});
   </script>
-</div>
 
 
 <!--
@@ -66,14 +67,14 @@
 
 <% else %>
 
-<div class="jumbotron">
-  <h1>Welcome to ClubBiz!</h1>
-  <p>ClubBiz is the best way to discover events around Uni. From BBQs to parties, guest lectures to rallies, or any other kind of Club event, this is the place to hear about it.</p>
-  <p>
-  <%= link_to "Log In", new_student_session_path, class: 'btn btn-inverse btn-lg', role: "button" %>
-  <%= link_to "Sign Up Today!", new_student_registration_path, class: 'btn btn-inverse btn-lg', role: "button" %>
-  </p>
-</div>
+  <div class="jumbotron">
+    <h1>Welcome to ClubBiz!</h1>
+    <p>ClubBiz is the best way to discover events around Uni. From BBQs to parties, guest lectures to rallies, or any other kind of Club event, this is the place to hear about it.</p>
+    <p>
+    <%= link_to "Log In", new_student_session_path, class: 'btn btn-inverse btn-lg', role: "button" %>
+    <%= link_to "Sign Up Today!", new_student_registration_path, class: 'btn btn-inverse btn-lg', role: "button" %>
+    </p>
+  </div>
 
 <% end %> 
 
@@ -81,10 +82,10 @@
 
 <% if club_signed_in? %>
 
-<%= link_to new_event_path do %>
-<div class="card-small" align="center">
-<h4>New Event </h4>
-</div>
-<% end %>
+  <%= link_to new_event_path do %>
+    <div class="card-small" align="center">
+    <h4>New Event </h4>
+    </div>
+  <% end %>
 
 <% end %>
