@@ -2,22 +2,28 @@ TODO
 
 Misc
 	event.rb - validate event datetime to be greater than today/now
-
+	Club website (optional), email (compulsory)
+	Club registration, email change, delete - admin only
+	User view for all liked clubs.
 
 Core
-	Search
-	Tickets
+	Search - Events
+	Tickets - RESERVATION ONLY AS PER DISCUSSION BOARD THREAD - https://app.lms.unimelb.edu.au/webapps/discussionboard/do/message?action=list_messages&forum_id=_240645_1&nav=discussion_board_entry&conf_id=_508221_1&course_id=_275053_1&message_id=_1101615_1
 	Admin - Specifically the club regirstration feature
-	???
 
 Optional
-	Club images - paperclip gem
-	Locations - Smart
+	Search - Clubs
+	Club logos/Event images - paperclip gem
 	More index filter options - Attending/liked, events from clubs I like, friends
-	Comments
+	Comments ("Post articles, discuss and provide feedback on events.")
 	Friends
+	Reports? (Liked? Tickets Sold? User Feedback/Rating?)
+	Announcements/advertising? (Admin to clubs, clubs to students)
+	Club groups/networks??? 
+
+Super Optional
 	Facebook Integration
-	???
+	Locations - Smart
 
 Done
 	Locations - Dumb

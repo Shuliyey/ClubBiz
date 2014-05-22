@@ -52,7 +52,7 @@
         <p> 
           <%= event.name %> <br />
           <%= Club.find(event.club_id).full_name %> <br />
-          <%= event.when.strftime("%d/%m %l:%M %p") %> <br />
+          <%= event.when.strftime("%d/%m/%y %l:%M%p") %> <br />
           <%= event.location %> <br />
         </p>
       </div>

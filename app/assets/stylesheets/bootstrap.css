@@ -782,7 +782,6 @@ pre code {
 .card > p > a:hover,
 .card > p > a:focus{
   background: #dddddd
-
 }
 
 .card-small {
@@ -799,6 +798,7 @@ pre code {
   border-radius: 4px;  
 }
 .card-small > p {
+  font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
