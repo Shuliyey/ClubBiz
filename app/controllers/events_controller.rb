@@ -3,11 +3,11 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
-  def index
-    date_from = params[:date_from].to_datetime if !params[:date_from].nil?
-    date_to = params[:date_to].to_datetime if !params[:date_to].nil?
-    date_from = Time.zone.now.beginning_of_day if params[:date_from].nil?
-    date_to = 7.day.from_now.beginning_of_day if params[:date_to].nil?
+  def index 
+    @date_from = params[:date_from].to_datetime if !params[:date_from].nil? && params[:date_from] != ""
+    @date_to = params[:date_to].to_datetime if !params[:date_to].nil? && params[:date_to] != ""
+    @date_from = Time.zone.now.beginning_of_day if params[:date_from].nil? || params[:date_from] == ""
+    @date_to = @date_from + 7.day if params[:date_to].nil? || params[:date_to] == ""
     date_range_hash = { 
       "day" => 1.day.from_now.beginning_of_day,
       "week" => 7.day.from_now.beginning_of_day,
@@ -15,9 +15,10 @@ class EventsController < ApplicationController
       "year" => 1.year.from_now.beginning_of_day
     }
     if (params.has_key?(:date_range))
-      date_to = date_range_hash[params[:date_range]]
+      @date_from = Time.zone.now.beginning_of_day
+      @date_to = date_range_hash[params[:date_range]]
     end
-    @events = Event.where(:when => (date_from..date_to))
+    @events = Event.where(:when => (@date_from..@date_to))
   end
 
   # GET /events/1

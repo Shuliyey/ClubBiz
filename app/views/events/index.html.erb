@@ -10,6 +10,13 @@
     <a href='events?date_range=week' class="btn btn-inverse">This Week</a> 
     <a href='events?date_range=month' class="btn btn-inverse">This Month</a>
     <a href='events?date_range=year' class="btn btn-inverse">This Year</a>
+    <div style="display=inline; clear:both; position=center">
+    <form id="event_dates" post='events'>
+    From <input name="date_from" value="<%=@date_from%>">
+    To <input name="date_to" value="<%=@date_to%>"> 
+    <button onclick="document.getElementById("event_dates").submit()">Search</button>
+    </form>
+    </div>
   </div>
   <p />
 </div>
