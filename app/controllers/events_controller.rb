@@ -19,6 +19,8 @@ class EventsController < ApplicationController
       @date_to = date_range_hash[params[:date_range]]
     end
     @events = Event.where(:when => (@date_from..@date_to))
+    @date_from = @date_from.strftime("%Y-%m-%d %H:%M:%S %Z")
+    @date_to = @date_to.strftime("%Y-%m-%d %H:%M:%S %Z")
   end
 
   # GET /events/1
