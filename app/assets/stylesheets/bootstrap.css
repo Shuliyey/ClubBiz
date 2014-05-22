@@ -809,7 +809,6 @@ pre code {
   border: 1px solid #BBB;
   border-bottom: 3px solid #BBB;      
 }
-
 @media (min-width: 768px) {
   .container {
     width: 750px;
