@@ -31,14 +31,14 @@
   <%= @event.count_likes(@event.id) %>
 </p>
 
-<% if (@event.maxTickets != nil && @event.maxTickets >= 0) %>
+<% if (@event.maxTickets != nil and @event.maxTickets >= 0) %>
 <p>
   <strong>Number of tickets:</strong>
   <%= @event.maxTickets %>
 </p>
 <% end %>
 
-<% if (@event.ticketPrice != nil && @event.ticketPrice >= 0) %>
+<% if (@event.ticketPrice != nil and @event.ticketPrice >= 0) %>
 <p>
   <strong>Ticket Price:</strong>
   $<%= @event.ticketPrice %>
@@ -51,7 +51,7 @@
 <% end %>
 
 
-<% if (@event.ticketPrice != nil && @event.memberDiscount != nil) %>
+<% if (@event.ticketPrice != nil and @event.ticketPrice >= 0 and @event.memberDiscount != nil and @event.memberDiscount >= 0) %>
 <p>
   <strong>Price for members:</strong>
   $<%= @event.ticketPrice-@event.memberDiscount %>
