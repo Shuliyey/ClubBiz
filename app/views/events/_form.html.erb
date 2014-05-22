@@ -25,6 +25,10 @@
     <%= f.datetime_local_field :when %>
   </div>
   <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
     <%= f.label "Number of tickets" %><i> (leave blank for unlimited capacity events)</i><br />
     <%= f.number_field :maxTickets %>
   </div>

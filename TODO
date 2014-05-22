@@ -1,17 +1,23 @@
 TODO
 
+Misc
+	event.rb - validate event datetime to be greater than today/now
+
+
 Core
 	Search
 	Tickets
-	Locations - Dunb
 	Admin - Specifically the club regirstration feature
 	???
 
 Optional
 	Club images - paperclip gem
 	Locations - Smart
-	More index options - Attending/liked, events from clubs I like, friends
+	More index filter options - Attending/liked, events from clubs I like, friends
 	Comments
 	Friends
 	Facebook Integration
 	???
+
+Done
+	Locations - Dumb

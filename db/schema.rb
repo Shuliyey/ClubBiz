@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519043120) do
+ActiveRecord::Schema.define(version: 20140522124445) do
 
   create_table "clubs", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140519043120) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "club_id"
+    t.string   "location"
   end
 
   add_index "events", ["club_id"], name: "index_events_on_club_id"

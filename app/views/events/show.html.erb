@@ -23,7 +23,12 @@
 
 <p>
   <strong>When:</strong>
-  <%= @event.when %>
+  <%= @event.when.strftime("%d/%m/%y %l:%M %p") %>
+</p>
+
+<p>
+  <strong>Where:</strong>
+  <%= @event.location %>
 </p>
 
 <p>
