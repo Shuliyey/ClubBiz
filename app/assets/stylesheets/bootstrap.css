@@ -767,7 +767,8 @@ pre code {
   margin-left: auto;
   background: white;
   /* border-radius: .4rem; */    
-  border: 1px solid #AAA;         
+  border: 1px solid #AAA;
+  border-radius: 4px;         
   border-bottom: 3px solid #BBB;  
 }
 .card > p {
@@ -794,7 +795,8 @@ pre code {
   background: white;
   /* border-radius: .4rem; */    
   border: 1px solid #AAA;         
-  border-bottom: 3px solid #BBB;  
+  border-bottom: 3px solid #BBB;
+  border-radius: 4px;  
 }
 .card-small > p {
   white-space: nowrap;
@@ -4863,8 +4865,9 @@ a.list-group-item-danger.active:focus {
   /*max-width: 550px;*/
   margin-bottom: 20px;
   background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border: 1px solid #AAA;
+  border-radius: 4px;         
+  border-bottom: 3px solid #BBB;         
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
           box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
@@ -5062,7 +5065,7 @@ a.list-group-item-danger.active:focus {
   border-bottom: 1px solid #ddd;
 }
 .panel-default {
-  border-color: #ddd;
+  border-color: #bbb;
 }
 .panel-default > .panel-heading {
   color: #333;

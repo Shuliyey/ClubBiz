@@ -5,44 +5,43 @@
   <h1>Listing events</h1>
 </div>
 
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" href="#collapseOne">
-      <div class="panel-heading">
-        <h4 class="panel-title" align="center">
-          Filter Events
-        </h4>
-      </div>
-    </a>  
-    <div id="collapseOne" class="collapse">
-      <div class="panel-body">
+<div class="panel panel-default">
+  <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">
+    <div class="panel-heading">
+      <h4 class="panel-title" align="center">
+        Filter Events
+      </h4>
+    </div>
+  </a>  
+  <div id="collapseOne" class="collapse">
+    <div class="panel-body">
 
-        <!-- Date Buttons -->
-        <div class="row" align="center">
-          <div class="btn-group">
-            <a href='events?date_range=day' class="btn btn-inverse">Today</a>
-            <a href='events?date_range=week' class="btn btn-inverse">This Week</a> 
-            <a href='events?date_range=month' class="btn btn-inverse">This Month</a>
-            <a href='events?date_range=year' class="btn btn-inverse">This Year</a>
-          </div>
-          <p> </p>
+      <!-- Date Buttons -->
+      <div class="row" align="center">
+        <div class="btn-group">
+          <a href='events?date_range=day' class="btn btn-inverse">Today</a>
+          <a href='events?date_range=week' class="btn btn-inverse">This Week</a> 
+          <a href='events?date_range=month' class="btn btn-inverse">This Month</a>
+          <a href='events?date_range=year' class="btn btn-inverse">This Year</a>
         </div>
-
-
-        <!-- Datepickers -->
-        <div style="display=inline" clear="both" align="center">
-          <form id="event_dates" post='events'> 
-            From <input name="date_from" value="<%=@date_from%>" id="date_from" />
-            To <input name="date_to" value="<%=@date_to%>" id="date_to" />
-            <button onclick='document.getElementById("event_dates").submit()'>Search</button>
-          </form>
-        </div>
-
-
+        <p> </p>
       </div>
+
+
+      <!-- Datepickers -->
+      <div style="display=inline" clear="both" align="center">
+        <form id="event_dates" post='events'> 
+          From <input name="date_from" value="<%=@date_from%>" id="date_from" />
+          To <input name="date_to" value="<%=@date_to%>" id="date_to" />
+          <button onclick='document.getElementById("event_dates").submit()'>Search</button>
+        </form>
+      </div>
+
+
     </div>
   </div>
 </div>
+
 
 
 <div class="row">
