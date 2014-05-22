@@ -1,5 +1,6 @@
 <% if student_signed_in? or club_signed_in? %>
-
+<script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script>
 <div align="center"> 
 	<h1>Listing events</h1>
 </div>
@@ -17,9 +18,17 @@
     <button onclick="document.getElementById("event_dates").submit()">Search</button>
     </form>
     <script>
-    	$(function() {
-    		$("#date_to").datepicker();
-    		$("#date_from").datepicker();
+    	function addZeros(num_string, len) {
+    		console.log(num_string)
+    		for (var i = 0; i < len - num_string.length(); i++) {
+    			num_string = "0" + num_string;
+    		}
+    		return num_string;
+    	}
+    	
+    	$(document).ready(function() {
+    		$("#date_to").datepicker({dateFormat: "yy-mm-dd 00:00:00"});
+    		$("#date_from").datepicker({dateFormat: "yy-mm-dd 00:00:00"});
     	});
     </script>
     </div>
