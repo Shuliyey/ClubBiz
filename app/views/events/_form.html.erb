@@ -25,15 +25,15 @@
     <%= f.datetime_local_field :when %>
   </div>
   <div class="field">
-    <%= f.label :maxTickets %><br>
+    <%= f.label "Number of tickets" %><i> (leave blank for unlimited capacity events)</i><br />
     <%= f.number_field :maxTickets %>
   </div>
   <div class="field">
-    <%= f.label :ticketPrice %><br>
+    <%= f.label "Ticket Price" %><i> (leave blank for free events)</i><br />
     <%= f.number_field :ticketPrice %>
   </div>
   <div class="field">
-    <%= f.label :memberDiscount %><br>
+    <%= f.label "Member Discount" %><i> (leave blank for no discount)</i><br />
     <%= f.number_field :memberDiscount %>
   </div>
   <div class="actions">
