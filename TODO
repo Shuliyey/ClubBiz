@@ -5,6 +5,8 @@ Misc
 	Club website (optional), email (compulsory)
 	Club registration, email change, delete - admin only
 	User view for all liked clubs.
+	View for listing all clubs.
+	Cookies for index filter/search. Keep filter options accross session.
 
 Core
 	Search - Events
@@ -19,7 +21,8 @@ Optional
 	Friends
 	Announcements/advertising? (Admin to clubs, clubs to students)
 	Reports? (Liked? Tickets Sold? User Feedback/Rating?)
-	Club groups/networks??? 
+	Club groups/networks???
+	Improved permissions - Cancan gem 
 
 Extension
 	Facebook Integration
