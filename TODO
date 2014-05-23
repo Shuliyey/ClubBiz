@@ -3,8 +3,8 @@ TODO
 Misc
 	Club registration, email change, delete - admin only
 	User view for all liked clubs.
-	View for listing all clubs.
 	Cookies for index filter/search. Keep filter options accross session.
+	Back button fix. Make the back buttons accross the site work better/more consistently.
 
 Core
 	Search - Events
@@ -33,3 +33,4 @@ Done
 	Locations - Dumb
 	event.rb - validate event datetime to be greater than today/now
 	Club website (optional), email (compulsory)
+	View for listing all clubs.

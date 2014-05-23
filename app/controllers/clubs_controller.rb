@@ -4,4 +4,12 @@ class ClubsController < ApplicationController
 	  @club = Club.find(params[:id])
 	end
 
+	def index 
+		@clubs = Club.all
+  	end
+
+  	def index_liked
+
+  	end
+
 end

@@ -1,0 +1,27 @@
+<% if student_signed_in? or club_signed_in? %>
+<!-- <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<!-- <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script> -->
+<div align="center"> 
+  <h1>Listing Clubs</h1>
+</div>
+
+<div class="row">
+<% @clubs.each do |club| %>
+    <div class="col-sm-3">
+      <%= link_to profile_path(club) do %>
+      <div class="card-small-wrap" align="center"> 
+        <p> 
+          <%= club.name %><br />
+          <!--Likes: <%= club.count_likes(club.id) %>-->
+        </p>
+      </div>
+      <% end %>
+    </div>
+<% end %>
+</div>
+
+<% end %> 
+
+<br>
+
+

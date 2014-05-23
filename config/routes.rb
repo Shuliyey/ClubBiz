@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'clubs/:id' => 'clubs#show', as: :profile
 
+  get 'clubs' => 'clubs#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

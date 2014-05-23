@@ -14,7 +14,8 @@
 		{ name: 'Penguin Club', description: 'A club for people who love penguins.', email: 'jamesj223@gmail.com', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
 		{ name: 'Dodo Club', description: 'A club for people who love dodos.', email: 'dodo@fakemail.com', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
 		{ name: 'Science Students Society', description: 'Working hard to distract you from study.', email: 'sss@fakemail.com', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
-		{ name: 'Melbourne University Engineering Student CLub', description: 'MUESC for short. One of the oldest clubs on campus, proudly carrying on the engineering tradition.', email: 'muesc@fakemail.com', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now }
+		{ name: 'Melbourne University Engineering Student Club', description: 'MUESC for short. One of the oldest clubs on campus, proudly carrying on the engineering tradition.', email: 'muesc@fakemail.com', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
+		{ name: '#5 Appreciation Club', description: '5 is the best number!', email: 'five@fakemail.com', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now }
 		
 
 		])
@@ -59,7 +60,8 @@
 		{ club_id: '1', name: 'Penguin BBQ', description: 'First BBQ of the year.', when: Time.now+(60 * 60 * 24 *3 ), location: 'South Lawn', maxTickets: '', ticketPrice: '', memberDiscount: ''},
 		{ club_id: '3', name: 'End of Exams Party', description: 'SSS famous EOX', when: Time.now+(60 * 60 * 24 *14 ), location: 'A nightclub', maxTickets: '', ticketPrice: '15', memberDiscount: ''},
 		{ club_id: '4', name: 'Eng Ball', description: 'The biggest engineering party of the year', when: Time.now+(60 * 60 * 24 *44 ), location: 'A fancy ballroom', maxTickets: '500', ticketPrice: '92', memberDiscount: '5'},
-		{ club_id: '2', name: 'Guest Lecture from Dodo Expert', description: 'The author of the book "The dodos arent gone, they are just hiding really well" reading a chapter of his book and taking questions', when: Time.now+(60 * 60 * 24 *5 ), location: 'Public Lecture Theatre', maxTickets: '', ticketPrice: '', memberDiscount: ''}
+		{ club_id: '2', name: 'Guest Lecture from Dodo Expert', description: 'The author of the book "The dodos arent gone, they are just hiding really well" reading a chapter of his book and taking questions', when: Time.now+(60 * 60 * 24 *5 ), location: 'Public Lecture Theatre', maxTickets: '', ticketPrice: '', memberDiscount: ''},
+		{ club_id: '5', name: '$5 lunch', description: 'Thanks to our sponsors, Subway, we will be having a $5 5-inch sub lunch!', when: Time.now+(60 * 60 * 24 *5 ), location: 'South Lawn', maxTickets: '', ticketPrice: '5', memberDiscount: ''}
 
 		])
 

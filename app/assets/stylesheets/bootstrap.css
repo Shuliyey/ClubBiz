@@ -783,7 +783,6 @@ pre code {
 .card > p > a:focus{
   background: #dddddd
 }
-
 .card-small {
   padding-right: 15px;
   padding-left: 15px;
@@ -805,6 +804,38 @@ pre code {
 }
 .card-small:hover,
 .card-small:focus {
+  color: black;
+  background-color: #dedede;
+  text-decoration: none;
+  border: 1px solid #BBB;
+  border-bottom: 3px solid #BBB;      
+}
+.card-small-wrap {
+
+  height: 150px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  /* border-radius: .4rem; */    
+  border: 1px solid #AAA;         
+  border-bottom: 3px solid #BBB;
+  border-radius: 4px;  
+}
+.card-small-wrap > p {
+  text-align: center;
+  vertical-align: middle
+  font-size: 12px;
+  padding: 15px;
+/*  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;*/
+}
+.card-small-wrap:hover,
+.card-small-wrap:focus {
   color: black;
   background-color: #dedede;
   text-decoration: none;
@@ -5039,7 +5070,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel > a:hover,
 .panel > a:focus{
-  color: #555555;
+  color: black;
 }
 .panel-group {
   margin-bottom: 20px;
