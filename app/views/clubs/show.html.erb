@@ -5,6 +5,18 @@
 <h2><%= @club.full_name %></h2>
 
 <p>
+  <strong>Contact Email Address:</strong>
+  <%= @club.email %>
+</p>
+
+<% if (@club.website != nil) %>
+<p>
+  <strong>Website:</strong>
+  <a href="<%= @club.website %>"><%= @club.website %> </a>
+</p>
+<% end %>
+
+<p>
   <strong>Description:</strong>
   <%= @club.description %>
 </p>

@@ -1,8 +1,6 @@
 TODO
 
 Misc
-	event.rb - validate event datetime to be greater than today/now
-	Club website (optional), email (compulsory)
 	Club registration, email change, delete - admin only
 	User view for all liked clubs.
 	View for listing all clubs.
@@ -18,11 +16,14 @@ Optional
 	Club logos/Event images - paperclip gem
 	More index filter options - Attending/liked, events from clubs I like, friends
 	Comments ("Post articles, discuss and provide feedback on events.")
+	
 	Friends
 	Announcements/advertising? (Admin to clubs, clubs to students)
+	Different Home Page?
+
 	Reports? (Liked? Tickets Sold? User Feedback/Rating?)
-	Club groups/networks???
-	Improved permissions - Cancan gem 
+	Club groups/networks ???
+	Improved permissions - Cancan gem ???
 
 Extension
 	Facebook Integration
@@ -30,3 +31,5 @@ Extension
 
 Done
 	Locations - Dumb
+	event.rb - validate event datetime to be greater than today/now
+	Club website (optional), email (compulsory)

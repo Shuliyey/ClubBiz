@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
 		def configure_permitted_parameters
 			devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :name]
-			devise_parameter_sanitizer.for(:account_update) << [:description]
+			devise_parameter_sanitizer.for(:account_update) << [:description, :website]
 		end
 
 	#Make it so only clubs can create, edit, update or destroy events

@@ -5,7 +5,10 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	validates :when, presence: true
 
-	#TODO validate event datetime to be greater than today
+	# Validate event datetime to be greater than today
+	validate  :greater_than_now
+
+
 
 	belongs_to :club
 
@@ -15,5 +18,11 @@ class Event < ActiveRecord::Base
 		@event = Event.find(event_id)
 		@event.students.count
 	end
+
+	# Validate event datetime to be greater than today
+	def greater_than_now
+		errors.add(:when, "Cannot create events in the past.") unless
+        self.when > Time.now
+  	end 
 
 end
