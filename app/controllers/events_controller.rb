@@ -4,8 +4,19 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index 
-    @date_from = params[:date_from].to_datetime if !params[:date_from].nil? && params[:date_from] != ""
-    @date_to = params[:date_to].to_datetime if !params[:date_to].nil? && params[:date_to] != ""
+    @expand_filter = FALSE
+    if (!params[:date_from].nil?) 
+      @expand_filter = TRUE
+      if (params[:date_from] != "")
+        @date_from = params[:date_from].to_datetime 
+      end
+    end
+    if (!params[:date_to].nil?)
+      @expand_filter = TRUE
+      if (params[:date_to] != "")
+        @date_to = params[:date_to].to_datetime
+      end
+    end
     @date_from = Time.zone.now.beginning_of_day if params[:date_from].nil? || params[:date_from] == ""
     @date_to = @date_from + 7.day if params[:date_to].nil? || params[:date_to] == ""
     date_range_hash = { 
@@ -17,6 +28,7 @@ class EventsController < ApplicationController
     if (params.has_key?(:date_range))
       @date_from = Time.zone.now.beginning_of_day
       @date_to = date_range_hash[params[:date_range]]
+      @expand_filter = TRUE
     end
     @events = Event.where(:when => (@date_from..@date_to))
     @date_from = @date_from.strftime("%Y-%m-%d %H:%M:%S")

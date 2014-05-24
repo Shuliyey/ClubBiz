@@ -6,20 +6,28 @@
 </div>
 
 <div class="panel panel-default">
-  <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">
+  <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne"
+  	<% if (defined? @expand_filter).nil? || !@expand_filter %> 
+  		class="collapsed" 
+  	<%end%>>
     <div class="panel-heading">
       <h4 class="panel-title" align="center">
         Filter Events
       </h4>
     </div>
   </a>  
-  <div id="collapseOne" class="collapse">
+  <div id="collapseOne"
+  	<% if ! (defined? @expand_filter).nil? && @expand_filter %> 
+  		class="collapse in" 
+  	<%else%>
+  		class="collapse"
+  	<%end%>>
     <div class="panel-body">
 
       <!-- Date Buttons -->
       <div class="row" align="center">
         <div class="btn-group">
-          <a href='events?date_range=day' class="btn btn-inverse">Today</a>
+          <a href='events?date_range=day&expad' class="btn btn-inverse">Today</a>
           <a href='events?date_range=week' class="btn btn-inverse">This Week</a> 
           <a href='events?date_range=month' class="btn btn-inverse">This Month</a>
           <a href='events?date_range=year' class="btn btn-inverse">This Year</a>
