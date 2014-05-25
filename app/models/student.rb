@@ -27,5 +27,16 @@ class Student < ActiveRecord::Base
 	  	@event = Event.find(event_id)
 	  	@student.events.where(:id => @event.id).exists?
   	end
+	
+	def return_has_reservation(student_id, event_id)
+		@student = Student.find(student_id)
+	  	@event = Event.find(event_id)
+		@student.reservations.where(:event_id => @event.id).exists?
+	end
+	
+	def count_reservations(student_id)
+		@student = Student.find(student_id)
+		@student.reservations.count
+	end
 
 end

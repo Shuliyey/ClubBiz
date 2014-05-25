@@ -108,7 +108,46 @@ class EventsController < ApplicationController
   
   # Search for clubs, events and students search
   def search
-    
+    @query=params[:q]
+    @clubs = []
+    @events = []
+    @students = []
+    if (! @query.nil? && @query.length > 0)
+      query_array = @query.split
+      @query = query_array.join("")
+      case query_array[0]
+      when "club_id"
+        club_id = query_array[1]
+        if (club_id.to_i.to_s == club_id)
+          redirect_to :controller => "clubs", :action => "show", :id => club_id
+          return
+        end
+      when "student_id"
+        student_id = query_array[1]
+        if (student_id.to_i.to_s == student_id)
+        end
+      when "event_id"
+        event_id = query_array[1]
+        if (event_id.to_i.to_s == event_id)
+          redirect_to :controller => "events", :action => "show", :id => event_id
+          return
+        end
+      when "events"
+        redirect_to :controller => "events"
+        return
+      when "clubs"
+        redirect_to :controller => "clubs"
+      else
+          regex = ("%" + query_array.join('%') + "%").downcase
+          @events = Event.where('lower(name) like  ? or lower(description) like ? or lower(location) like ?', regex, regex, regex).order('"when", created_at')
+          @clubs = Club.where('lower(name) like ? or lower(description) like ? or lower(email) like ? or lower(website) like ?', regex, regex, regex, regex)
+      end
+    end
+  end
+  
+  # Reserve a ticket for an event
+  def reserve
+  
   end
   
   private
