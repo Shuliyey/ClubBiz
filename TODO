@@ -11,11 +11,6 @@ Misc fixes.
 Core
 
 
-	Tickets
-		Check if reservation allowed (maxtickets>tickets_allocated)
-		Update event.tickets_allocated.
-
-
 	Admin - Specifically the club regirstration feature
 		Remove if (1==2) Club registration, email change, delete - admin only
 
@@ -51,6 +46,8 @@ Done
 	Tickets
 		Reservation model
 		Reserve button for users. (With popup confirmation.)
+		Check if reservation allowed (maxtickets>tickets_allocated)
+		Update event.tickets_allocated.
 
 
 	Comments
