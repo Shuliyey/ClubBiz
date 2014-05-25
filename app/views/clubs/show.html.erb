@@ -29,7 +29,7 @@
 <br />
 
 <div class="card">
-  <h3>Events</h3>
+  <h3>Upcoming Events</h3>
 
   <table class="table table-striped">
     <col width=20%>
@@ -43,8 +43,8 @@
 
     <% @events.each do |event| %>
       <tr>
-      <td><%= event.name %></td>
-      <td>    <%= link_to event do %><%=event.description %><% end %></td>
+      <td><%= link_to event do %><%= event.name %><% end %></td>
+      <td><%= link_to event do %><%=event.description %><% end %></td>
       <td><%= event.when.strftime("%d/%m/%y %l:%M %p") %></td>
       </tr>
     <% end %>
