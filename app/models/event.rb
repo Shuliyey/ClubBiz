@@ -32,6 +32,15 @@ class Event < ActiveRecord::Base
 		@event = Event.find(event_id)
 		@event.reservations.count
 	end
+	
+	def return_sold_out(event_id)
+		@event = Event.find(event_id)
+		if @event.maxTickets != nil
+			@event.maxTickets >= @event.tickets_allocated
+		else
+			false
+		end
+	end
 		
 
 end
