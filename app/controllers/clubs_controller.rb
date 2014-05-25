@@ -12,4 +12,8 @@ class ClubsController < ApplicationController
 
   	end
 
+	def my_clubs
+		@clubs = current_student.clubs
+  	end
+
 end
