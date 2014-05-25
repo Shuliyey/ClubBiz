@@ -1,0 +1,17 @@
+<h1>Students</h1>
+<% if student_signed_in? && current_student.admin %>
+<div class="row">
+<% @students.each do |student| %>
+    <div class="col-sm-3">
+      <%= link_to grant_permission_path(student) do %>
+      <div class="card-small" align="center"> 
+        <p <% if student.admin %> style="color: green" <% end %>> 
+          <%= student.first_name + " " + student.last_name %><br />
+          <%= student.email %> <br />
+          <% if student.admin %> Administrator <% else %> Student <% end %> <br />
+      </div>
+      <% end %>
+    </div>
+<% end %>
+</div>
+<% end %>

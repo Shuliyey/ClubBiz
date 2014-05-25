@@ -43,6 +43,7 @@
   <%= devise_error_messages! %>
   <div>
   	<b>Status:</b> <% if @student.admin %> <span style="color: green">Administrator</span> <% else %> <span style="color: blue">Student</span> <% end %>
+  	<a href="http://localhost:3000/students/admin_permission" class="btn">Grant Administrative Permissions</a>
   </div>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>

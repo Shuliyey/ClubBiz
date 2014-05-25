@@ -30,6 +30,10 @@ Rails.application.routes.draw do
 
   get 'clubs' => 'clubs#index'
   
+  get 'students/admin_permission' => 'students#admin_permission'
+  
+  get 'students/grant_permission/:id' => 'students#grant_permission', as: :grant_permission
+  
   get 'students/:id' => 'students#show', as: :student_profile
   
   get 'students' => 'students#index'
