@@ -1,3 +1,5 @@
+<% if student_signed_in? %>
+<% if current_student.admin %>
 <div class="card">
 
 <h2>Club Sign Up</h2>
@@ -23,3 +25,10 @@
 <%= render "clubs/shared/links" %>
 
 </div>
+<% else %>
+	Your account doesn't have the administrator rights. Please <%= link_to "Log Out", destroy_student_session_path, class: 'navbar-link', method: :delete %> and login with an account with Administrator right
+<% end %>
+<% else %>
+	You have to login as administrator in order to sign_up a club, click on the below page to login <br />
+	<a href="/students/sign_in">Administrator Login in</a>
+<% end %>

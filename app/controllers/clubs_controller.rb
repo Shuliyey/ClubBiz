@@ -14,5 +14,9 @@ class ClubsController < ApplicationController
   	def index_liked
 
   	end
-
+  	
+  	def redirect_to_admin_login
+  	 redirect_to "/students/sign_in"
+  	 return
+  	end
 end

@@ -1,0 +1,18 @@
+<div class="card">
+
+<p id="notice"><%= notice %></p>
+
+<h2 <% if @student.admin %> style='color: green' <% end %>><%= @student.first_name + " " + @student.last_name%> (<%if @student.admin %>Administrator<% else %>Student<% end %>)</if></h2>
+
+<p>
+  <strong>Email Address:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+	<strong>Joined on:</strong>
+	<%= @student.created_at.strftime("%Y-%m-%d %H:%M:%S %p %Z") %>
+</p>
+
+<br />
+</div>

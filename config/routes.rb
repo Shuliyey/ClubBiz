@@ -24,9 +24,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'events#index'
 
+  get 'clubs/redirect_to_admin_login' => 'clubs#redirect_to_admin_login'
+
   get 'clubs/:id' => 'clubs#show', as: :profile
 
   get 'clubs' => 'clubs#index'
+  
+  get 'students/:id' => 'students#show', as: :student_profile
+  
+  get 'students' => 'students#index'
   
   get 'search' => 'events#search', as: :search
 

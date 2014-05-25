@@ -1,0 +1,26 @@
+<% if student_signed_in? or club_signed_in? %>
+<!-- <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<!-- <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script> -->
+<div align="center"> 
+  <h1>Listing Students</h1>
+</div>
+
+<div class="row">
+<% @students.each do |student| %>
+    <div class="col-sm-3">
+      <%= link_to student_profile_path(student) do %>
+      <div class="card-small" align="center"> 
+        <p <% if student.admin %> style="color: green" <% end %>> 
+          <%= student.first_name + " " + student.last_name %><br />
+          <%= student.email %> <br />
+          <% if student.admin %> Administrator <% else %> Student <% end %> <br />
+      </div>
+      <% end %>
+    </div>
+<% end %>
+</div>
+<% end %> 
+
+<br>
+
+

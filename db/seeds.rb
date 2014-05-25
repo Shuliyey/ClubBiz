@@ -26,8 +26,8 @@
 
 	@students = Student.create([
 		# Real
-		{first_name: 'James', last_name: 'Johnstone', email: 'jameswj@student.unimelb.edu.au', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
-		{first_name: 'David', last_name: 'Finn', email: 'dsfinn@student.unimelb.edu.au', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
+		{first_name: 'James', last_name: 'Johnstone', email: 'jameswj@student.unimelb.edu.au', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now, admin: 't' },
+		{first_name: 'David', last_name: 'Finn', email: 'dsfinn@student.unimelb.edu.au', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now, admin: 't' },
 		
 		# Fake
 		{first_name: 'John', last_name: 'Smith', email: 'jsmith@student.unimelb.edu.au', password: 'asdfjkl;' , password_confirmation: 'asdfjkl;' , confirmed_at: Time.now },
