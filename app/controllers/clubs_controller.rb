@@ -11,12 +11,17 @@ class ClubsController < ApplicationController
 		@clubs = Club.all
 	end
 
-  	def index_liked
+  def index_liked
 
-  	end
+  end
   	
-  	def redirect_to_admin_login
+  def redirect_to_admin_login
   	 redirect_to "/students/sign_in"
   	 return
+  end
+
+	def my_clubs
+		@clubs = current_student.clubs
   	end
+
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'students/like_club'
+  get 'clubs/my_clubs' => 'clubs#my_clubs'
 
   get 'clubs/show'
 

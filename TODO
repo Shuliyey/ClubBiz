@@ -4,21 +4,11 @@ Misc fixes.
 	User view for all liked clubs.
 	Cookies for index filter/search. Keep filter options accross session.
 	Back button fix. Make the back buttons accross the site work better/more consistently.
-	List upcoming events for a particular club.
 	Fix navbar collapse for long club names.
 
 
 
 Core
-	Search - Events
-
-	Tickets - RESERVATION ONLY AS PER DISCUSSION BOARD THREAD - https://app.lms.unimelb.edu.au/webapps/discussionboard/do/message?action=list_messages&forum_id=_240645_1&nav=discussion_board_entry&conf_id=_508221_1&course_id=_275053_1&message_id=_1101615_1
-
-
-		Reserve button for users. (With popup confirmation.)
-		Check if reservation allowed (maxtickets>tickets_allocated)
-		Create entry in reservation jointable.
-		Update event.tickets_allocated.
 
 
 	Admin - Specifically the club regirstration feature
@@ -27,11 +17,10 @@ Core
 
 
 Optional - Ranked in order of importance.
-	Search - Clubs
+
 
 	More index filter options - Attending/liked, events from clubs I like, friends
-	Comments ("Post articles, discuss and provide feedback on events.")
-		Create, Edit and Delete buttons, & the code and logic to support them
+
 	
 	Friends
 	Announcements/advertising? (Admin to clubs, clubs to students)
@@ -50,14 +39,24 @@ Extension
 
 
 Done
+	Search - Events
+	Search - Clubs
+
+
 	Tickets
 		Reservation model
+		Reserve button for users. (With popup confirmation.)
+		Check if reservation allowed (maxtickets>tickets_allocated)
+		Update event.tickets_allocated.
 
 
 	Comments
+		Create, Edit and Delete buttons, & the code and logic to support them
 		Comments model.
 		Comments code added to Event Show.
 		Display comments for events.
+
+	List upcoming events for a particular club.
 
 	Tickets remaining to event.
 	Locations - Dumb
