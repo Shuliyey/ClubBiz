@@ -6,11 +6,18 @@ Rails.application.routes.draw do
 
   devise_for :clubs
   devise_for :students
-  resources :events
+
+  resources :events do
+    resources :comments, only: [:new, :create, :edit, :destroy, :update]
+  end
+
   resources :clubs_students, only: [:create, :destroy]
   resources :events_students, only: [:create, :destroy]
+
   resources :posts
   resources :reservations, only: [:create, :destroy]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -14,31 +14,31 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, size: "33"%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description, rows: 5, resize: "none" %>
+    <%= f.text_area :description, size: "33x5", resize: "none" %>
   </div>
   <div class="field">
-    <%= f.label :when %><br>
+    <%= f.label :when , size: "33"%><br>
     <%= f.datetime_local_field :when %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= f.label :location , size: "33"%><br>
     <%= f.text_field :location %>
   </div>
   <div class="field">
     <%= f.label "Number of tickets" %><i> (leave blank for unlimited capacity events)</i><br />
-    <%= f.number_field :maxTickets %>
+    <%= f.number_field :maxTickets , size: "33"%>
   </div>
   <div class="field">
     <%= f.label "Ticket Price" %><i> (leave blank for free events)</i><br />
-    <%= f.number_field :ticketPrice %>
+    <%= f.number_field :ticketPrice , size: "33"%>
   </div>
   <div class="field">
     <%= f.label "Member Discount" %><i> (leave blank for no discount)</i><br />
-    <%= f.number_field :memberDiscount %>
+    <%= f.number_field :memberDiscount , size: "33"%>
   </div>
   <div class="actions">
     <%= f.submit %>

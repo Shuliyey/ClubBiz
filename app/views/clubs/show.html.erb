@@ -28,11 +28,35 @@
 
 <br />
 
+<div class="card">
+  <h3>Upcoming Events</h3>
+
+  <table class="table table-striped">
+    <col width=20%>
+    <col width=70%>
+    <col width=10%>
+    <tr>
+      <td><strong>Event Name</strong></td>
+      <td><strong>Event Description</strong></td>
+      <td><strong>Date/Time</strong></td>
+    </tr>
+
+    <% @events.each do |event| %>
+      <tr>
+      <td><%= link_to event do %><%= event.name %><% end %></td>
+      <td><%= link_to event do %><%=event.description %><% end %></td>
+      <td><%= event.when.strftime("%d/%m/%y %l:%M %p") %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
+<br />
 <div class="btn-group">
 <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"),
     events_path,
     class: "btn btn-inverse"%>
-  <% if club_signed_in? and (@club_id == current_club.id) %>
+  <% if club_signed_in? and (@club.id == current_club.id) %>
   <%= link_to raw("<i class=\"glyphicon glyphicon-pencil\"> Edit</i>"), edit_club_registration_path, class: "btn btn-inverse" %>
   <% end %>
 
