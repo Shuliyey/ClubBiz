@@ -36,6 +36,11 @@
   <%= @event.count_likes(@event.id) %>
 </p>
 
+<p>
+  <strong>Reservations:</strong>
+  <%= @event.count_reservations(@event.id) %>
+</p>
+
 <% if (@event.maxTickets != nil and @event.maxTickets >= 0) %>
 <p>
   <strong>Number of tickets:</strong>
@@ -94,12 +99,23 @@
   <% if student_signed_in? %>
     <% if !current_student.return_likes_event(current_student.id, @event.id) %>
       <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Like </i>"), events_students_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse"%>
-      <% else %>
+    <% else %>
         <% like = current_student.events.where(:id => @event.id) %>
       <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Liked </i>"), 
           events_student_path(:event_id => @event.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
 
-      <% end %>
+    <% end %>
+	
+	<% if !current_student.return_has_reservation(current_student.id, @event.id) %>
+      <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserve </i>"), reservations_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse", data: { confirm: 'Confirmation that you would like to reserve a ticket?' }%>
+	
+	<% else %>
+	<% reservation = current_student.reservations.where(:event_id => @event.id) %>
+      <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserved </i>"), 
+          reservation_path(:event_id => @event.id), :method => :delete, :class => "btn btn-inverse-toggled", data: { confirm: 'Confirmation that you would like to cancel your reservation?' }%>
+
+    <% end %>
+	  
   <% end %>
 </div>
 
@@ -110,21 +126,60 @@
 <div class="card">
   <h3>Comments</h3>
 
+  <% if student_signed_in? %>
+  <%= button_to new_event_comment_path(@event), :method => :get, class: "btn btn-inverse" do %>
+   New Comment 
+  <% end %>
+  <% end %>
+
+  <br />
+
   <table class="table table-striped">
     <col width=20%>
-    <col width=70%>
-    <col width=10%>
+    <col width=60%>
+    <col width=5%>
+    <col width=5%>
     <tr>
       <td><strong>Student</strong></td>
       <td><strong>Comment</strong></td>
       <td><strong>Date/Time</strong></td>
+      <td><strong> </strong></td> 
+      <td><strong> </strong></td> 
     </tr>
 
+    <% @club = Club.find(@event.club_id) %>  
+
     <% @comments.each do |comment| %>
+
+    <% @student = Student.find(comment.student_id) %>  
     <tr>
       <td><%= Student.find(comment.student_id).full_name %></td>
       <td><%= comment.content %></td>
       <td><%= comment.updated_at.strftime("%d/%m/%y %l:%M %p") %></td>
+      
+      <% if student_signed_in? and (@student.id == current_student.id) %>
+      <td>  
+        <%= link_to raw("<i class=\"glyphicon glyphicon-pencil\"></i>"), 
+          edit_event_comment_path(@event, comment), 
+          class: "btn btn-inverse",
+          method: :get %>
+      </td>
+      <td>
+        <%= link_to raw("<i class=\"glyphicon glyphicon-remove\"></i>"), 
+          event_comment_path(@event, comment), 
+          class: "btn btn-inverse",
+          method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' } %>
+      </td>       
+      <% end %>  
+      <% if club_signed_in? and (@club.id == current_club.id) %>
+      <td>  
+        <%= link_to raw("<i class=\"glyphicon glyphicon-remove\"></i>"), 
+          event_comment_path(@event, comment), 
+          class: "btn btn-inverse",
+          method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' } %>  
+      </td><td></td>       
+      <% end %>
+      </td>
     </tr>
     <% end %>
 

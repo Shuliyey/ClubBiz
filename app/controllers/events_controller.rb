@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  #Make it so only clubs can create, edit, update or destroy events
+
+  
   # GET /events
   # GET /events.json
   def index 
@@ -38,7 +41,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json  
   def show
-    @comments = Comment.where(event_id: @event.id)
+    @comments = Comment.where(event_id: @event.id).order(:created_at)
   end
 
   # GET /events/new
@@ -142,6 +145,11 @@ class EventsController < ApplicationController
           @clubs = Club.where('lower(name) like ? or lower(description) like ? or lower(email) like ? or lower(website) like ?', regex, regex, regex, regex)
       end
     end
+  end
+  
+  # Reserve a ticket for an event
+  def reserve
+  
   end
   
   private

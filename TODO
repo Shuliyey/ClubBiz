@@ -14,7 +14,7 @@ Core
 
 	Tickets - RESERVATION ONLY AS PER DISCUSSION BOARD THREAD - https://app.lms.unimelb.edu.au/webapps/discussionboard/do/message?action=list_messages&forum_id=_240645_1&nav=discussion_board_entry&conf_id=_508221_1&course_id=_275053_1&message_id=_1101615_1
 
-		Reservation jointable.
+
 		Reserve button for users. (With popup confirmation.)
 		Check if reservation allowed (maxtickets>tickets_allocated)
 		Create entry in reservation jointable.
@@ -50,6 +50,10 @@ Extension
 
 
 Done
+	Tickets
+		Reservation model
+
+
 	Comments
 		Comments model.
 		Comments code added to Event Show.
