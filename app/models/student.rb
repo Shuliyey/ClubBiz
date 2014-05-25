@@ -34,9 +34,9 @@ class Student < ActiveRecord::Base
 		@student.reservations.where(:event_id => @event.id).exists?
 	end
 	
-	def count_reservations(event_id)
-		@event = Event.find(event_id)
-		@event.reservations.count
+	def count_reservations(student_id)
+		@student = Student.find(student_id)
+		@student.reservations.count
 	end
 
 end

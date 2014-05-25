@@ -1,4 +1,32 @@
 <div class="card">
+	<h3>
+		Reservations:
+		<%= current_student.count_reservations(current_student.id) %>
+	</h3>
+
+  <table class="table table-striped">
+    <col width=50%>
+	<col width=50%>
+	
+	<tr>
+      <td><strong>Event Name</strong></td>
+      <td><strong>Date/Time</strong></td>
+    </tr>
+
+    <% current_student.reservations.each do | r | %>
+		<% event = Event.find(r.event_id) %>
+    <tr>
+      <td><%= event.name %></td>
+	  <td><%= event.when %></td>
+    </tr>
+    <% end %>
+
+  </table>
+
+</div>
+
+
+<div class="card">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -37,3 +65,4 @@
 
 
 </div>
+
