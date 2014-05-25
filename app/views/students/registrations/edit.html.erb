@@ -20,12 +20,13 @@
     <tr>
       <td><%= event.name %></td>
 	  <td><%= event.when %></td>
+	  
 		<td>
 			<% @reservation = r %>
 			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserved </i>"), 
 				reservation_path(:id => @reservation.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
 		</td>
-
+		
       
 	  
     </tr>

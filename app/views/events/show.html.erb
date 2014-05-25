@@ -107,10 +107,10 @@
     <% end %>
 	
 	<% if !current_student.return_has_reservation(current_student.id, @event.id) %>
-      <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserve </i>"), reservations_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse"%>
+      <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserve </i>"), reservations_path(:event_id => @event.id, :student_id => current_student.id), :method => :post, :class => "btn btn-inverse"%>
 	
 	<% else %>
-	<% @reservation = current_student.reservations.where(:event_id => @event.id) %>
+	<% @reservation = current_student.reservations.where(:event_id => @event.id)[ 0 ] %>
       <%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserved </i>"), 
           reservation_path(:id => @reservation.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
 
