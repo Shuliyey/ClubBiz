@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 		end
 
 	#Make it so only clubs can create, edit, update or destroy events
-	before_action :authenticate_club!, only: [:edit,:new,:update]#, :destroy]
+	# before_action :authenticate_club!, only: [:edit,:new,:update]#, :destroy]
 
 
 

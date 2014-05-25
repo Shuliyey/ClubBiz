@@ -1,0 +1,16 @@
+  <div class="card">
+
+  <%= form_for @comment, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+
+  <%= f.text_area :content, size: "33x5" %>
+  <%= f.submit "Post" %>
+  <% end %>
+
+  <% @event = Event.find(params[:event_id]) %>
+  <div class="btn-group">
+  <%= link_to raw("<i class=\"glyphicon glyphicon-arrow-left\"> Back</i>"), 
+   		@event, 
+	    class: "btn btn-inverse"%>
+	</div>
+
+  </div>
