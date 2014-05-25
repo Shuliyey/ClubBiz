@@ -10,6 +10,7 @@ class Student < ActiveRecord::Base
 	has_and_belongs_to_many :events
   has_and_belongs_to_many :clubs
   has_many :comments
+  has_many :reservations
 
   	def full_name
 		"#{first_name} #{last_name}"

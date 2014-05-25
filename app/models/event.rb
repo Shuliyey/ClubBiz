@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
 	has_and_belongs_to_many :students
 
 	has_many :comments
+	has_many :reservations
 
 	def count_likes(event_id)
 		@event = Event.find(event_id)
