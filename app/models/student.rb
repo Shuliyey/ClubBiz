@@ -8,7 +8,8 @@ class Student < ActiveRecord::Base
                   message: "must be a '@student.unimelb.edu.au' address" }
 
 	has_and_belongs_to_many :events
-  	has_and_belongs_to_many :clubs
+  has_and_belongs_to_many :clubs
+  has_many :comments
 
   	def full_name
 		"#{first_name} #{last_name}"
