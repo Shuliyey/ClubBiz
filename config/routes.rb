@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :events
   resources :clubs_students, only: [:create, :destroy]
   resources :events_students, only: [:create, :destroy]
-
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'clubs/:id' => 'clubs#show', as: :profile
 
   get 'clubs' => 'clubs#index'
+  
+  get 'events/search' => 'events#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

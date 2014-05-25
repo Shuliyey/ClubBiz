@@ -101,7 +101,11 @@ class EventsController < ApplicationController
       end
     end
   end
-
+  
+  # Search for events and clubs search
+  def search
+    
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
