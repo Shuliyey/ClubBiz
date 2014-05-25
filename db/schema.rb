@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525020122) do
+ActiveRecord::Schema.define(version: 20140525045138) do
 
   create_table "clubs", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 20140525020122) do
     t.integer "student_id", null: false
     t.integer "event_id",   null: false
   end
+
+  create_table "reservations", force: true do |t|
+    t.integer "student_id"
+    t.integer "event_id"
+    t.integer "ticket_number"
+  end
+
+  add_index "reservations", ["event_id"], name: "index_reservations_on_event_id"
+  add_index "reservations", ["student_id"], name: "index_reservations_on_student_id"
 
   create_table "students", force: true do |t|
     t.string   "email",                  default: "", null: false
