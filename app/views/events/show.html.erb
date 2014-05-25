@@ -112,16 +112,19 @@
 
   <table class="table table-striped">
     <col width=20%>
-    <col width=80%>
+    <col width=70%>
+    <col width=10%>
     <tr>
       <td><strong>Student</strong></td>
       <td><strong>Comment</strong></td>
+      <td><strong>Date/Time</strong></td>
     </tr>
 
     <% @comments.each do |comment| %>
     <tr>
       <td><%= Student.find(comment.student_id).full_name %></td>
       <td><%= comment.content %></td>
+      <td><%= comment.updated_at.strftime("%d/%m/%y %l:%M %p") %></td>
     </tr>
     <% end %>
 
