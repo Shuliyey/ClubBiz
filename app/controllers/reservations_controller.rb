@@ -12,8 +12,9 @@ end
 def destroy #remove a reservation for an event
 	@student = Student.find(current_student.id)
 	@event = Event.find(params[:event_id])
-	@reservation = Reservation.find(params[:event_id])
+	@reservation = @student.reservations.where(:event_id => @event.id)
 	@student.reservations.delete(@reservation)
+	@event.reservations.delete(@reservation)
 	redirect_to @event
 end
 
