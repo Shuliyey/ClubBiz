@@ -27,5 +27,11 @@ class Event < ActiveRecord::Base
 		errors.add(:when, "Cannot create events in the past.") unless
         self.when > Time.now
   	end 
+	
+	def count_reservations(event_id)
+		@event = Event.find(event_id)
+		@event.reservations.count
+	end
+		
 
 end
