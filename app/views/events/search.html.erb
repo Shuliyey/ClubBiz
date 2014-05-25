@@ -1,5 +1,38 @@
 <div>Clubs</div>
 
+<div class="row">
+<% @clubs.each do |club| %>
+    <div class="col-sm-3">
+      <%= link_to profile_path(club) do %>
+      <div class="card-small-wrap" align="center"> 
+        <p> 
+          <%= club.name %><br />
+          <%= club.website %> <br />
+          <%= club.description %> <br />
+          <!--Likes: <%= club.count_likes(club.id) %>-->
+        </p>
+      </div>
+      <% end %>
+    </div>
+<% end %>
+</div>
+
 <div>Events</div>
+<div class="row">
+<% @events.each do |event| %>
+    <div class="col-sm-3">
+      <%= link_to event do %>
+      <div class="card-small" align="center"> 
+        <p> 
+          <%= event.name %> <br />
+          <%= Club.find(event.club_id).full_name %> <br />
+          <%= event.when.strftime("%d/%m/%y %l:%M%p") %> <br />
+          <%= event.location %> <br />
+        </p>
+      </div>
+      <% end %>
+    </div>
+<% end %>
+</div>
 
 <div>Students</div>
