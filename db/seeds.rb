@@ -83,3 +83,12 @@
 			student.clubs << club
 		end
 	end
+
+# Comments
+	@comments = Comment.create([
+		{ event_id: '1', student_id: '1', content: 'Super excited for this event!'},
+		{ event_id: '1', student_id: '2', content: 'Aww yeah! Penguin BBQ!'},
+		{ event_id: '1', student_id: '3', content: 'Will there be Halal Sausages?'},
+		{ event_id: '2', student_id: '4', content: 'Woo hoo! Can\'t wait!'}
+
+		])

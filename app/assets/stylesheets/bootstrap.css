@@ -783,6 +783,9 @@ pre code {
 .card > p > a:focus{
   background: #dddddd
 }
+.card > table {
+text-align: center;
+}
 .card-small {
   padding-right: 15px;
   padding-left: 15px;

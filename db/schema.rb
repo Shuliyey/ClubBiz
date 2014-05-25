@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523140858) do
+ActiveRecord::Schema.define(version: 20140525020122) do
 
   create_table "clubs", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20140523140858) do
     t.integer "club_id",    null: false
   end
 
+  create_table "comments", force: true do |t|
+    t.string   "content"
+    t.integer  "student_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id"
+  add_index "comments", ["student_id"], name: "index_comments_on_student_id"
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -54,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140523140858) do
     t.datetime "updated_at"
     t.integer  "club_id"
     t.string   "location"
+    t.integer  "tickets_allocated", default: 0
   end
 
   add_index "events", ["club_id"], name: "index_events_on_club_id"

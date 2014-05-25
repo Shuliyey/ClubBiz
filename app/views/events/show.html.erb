@@ -43,6 +43,18 @@
 </p>
 <% end %>
 
+<% if club_signed_in? and (@event.club_id == current_club.id) and (@event.maxTickets != nil and @event.maxTickets >= 0) %>
+  <p>
+    <strong>Tickets reserved:</strong>
+    <%= @event.tickets_allocated %>
+  </p>
+
+  <p>
+    <strong>Tickets remaining:</strong>
+    <%= @event.maxTickets - @event.tickets_allocated %>
+  </p>
+<% end %>        
+
 <% if (@event.ticketPrice != nil and @event.ticketPrice >= 0) %>
 <p>
   <strong>Ticket Price:</strong>
@@ -90,5 +102,29 @@
       <% end %>
   <% end %>
 </div>
+
+</div>
+
+<br />
+
+<div class="card">
+  <h3>Comments</h3>
+
+  <table class="table table-striped">
+    <col width=20%>
+    <col width=80%>
+    <tr>
+      <td><strong>Student</strong></td>
+      <td><strong>Comment</strong></td>
+    </tr>
+
+    <% @comments.each do |comment| %>
+    <tr>
+      <td><%= Student.find(comment.student_id).full_name %></td>
+      <td><%= comment.content %></td>
+    </tr>
+    <% end %>
+
+  </table>
 
 </div>
