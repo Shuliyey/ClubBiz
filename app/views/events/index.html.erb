@@ -38,7 +38,7 @@
 
       <!-- Datepickers -->
       <div style="display=inline" clear="both" align="center">
-        <form id="event_dates" post='events'> 
+        <form id="event_dates" action='events' method='get'> 
           From <input name="date_from" value="<%=@date_from%>" id="date_from" />
           To <input name="date_to" value="<%=@date_to%>" id="date_to" />
           <button onclick='document.getElementById("event_dates").submit()'>Search</button>
