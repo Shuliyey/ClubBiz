@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'clubs' => 'clubs#index'
   
-  get 'events/search' => 'events#search'
+  get 'search' => 'events#search', as: :search
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
