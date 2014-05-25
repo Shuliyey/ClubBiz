@@ -7,6 +7,7 @@ def create #reserve a ticket for event
 	@student.reservations << @reservation
 	@event.reservations << @reservation
 	@event.tickets_allocated += 1
+	@event.save
 	redirect_to @event
 end
 
@@ -17,6 +18,7 @@ def destroy #remove a reservation for an event
 	@student.reservations.delete(@reservation)
 	@event.reservations.delete(@reservation)
 	@event.tickets_allocated -= 1
+	@event.save
 	redirect_to @event
 end
 
