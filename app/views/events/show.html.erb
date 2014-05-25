@@ -36,11 +36,6 @@
   <%= @event.count_likes(@event.id) %>
 </p>
 
-<p>
-  <strong>Reservations:</strong>
-  <%= @event.count_reservations(@event.id) %>
-</p>
-
 <% if (@event.maxTickets != nil and @event.maxTickets >= 0) %>
 <p>
   <strong>Number of tickets:</strong>
@@ -106,25 +101,25 @@
           events_student_path(:event_id => @event.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
 
     <% end %>
-	
-  	<% if !current_student.return_has_reservation(current_student.id, @event.id) %>
+	  <% if (@event.maxTickets != nil and @event.maxTickets >= 0) %>
+    	<% if !current_student.return_has_reservation(current_student.id, @event.id) %>
 
-  		<% if @event.return_sold_out(@event.id) %>
-        <fieldset disabled>
-  			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Sold out!</i>"), reservations_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse", data: { confirm: 'This system has been improperly programmed, reserve a ticket anyway?' }%>
-        </fieldset>
-  		<% else %>
-  			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserve </i>"), reservations_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse", data: { confirm: 'Confirmation that you would like to reserve a ticket?' }%>
-  		<% end %>
-  		
-  	<% else %>
-	
-  		<% @reservation = current_student.reservations.where(:event_id => @event.id)[ 0 ] %>
-  		<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserved </i>"), 
-  			reservation_path(:id => @reservation.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
+    		<% if @event.return_sold_out(@event.id) %>
+          <fieldset disabled>
+    			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Sold out!</i>"), reservations_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse", data: { confirm: 'This system has been improperly programmed, reserve a ticket anyway?' }%>
+          </fieldset>
+    		<% else %>
+    			<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserve </i>"), reservations_path(:event_id => @event.id), :method => :post, :class => "btn btn-inverse", data: { confirm: 'Confirmation that you would like to reserve a ticket?' }%>
+    		<% end %>
+    		
+    	<% else %>
+  	
+    		<% @reservation = current_student.reservations.where(:event_id => @event.id)[ 0 ] %>
+    		<%= link_to raw("<i class=\"glyphicon glyphicon-thumbs-up\"> Reserved </i>"), 
+    			reservation_path(:id => @reservation.id), :method => :delete, :class => "btn btn-inverse-toggled"%>
 
-    <% end %>
-	  
+      <% end %>
+	  <% end %>
   <% end %>
 </div>
 
